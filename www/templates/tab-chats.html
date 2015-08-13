@@ -1,0 +1,24 @@
+<ion-view view-title="Cancún">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in items" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+	  <div ng-repeat="weather in item.weather">
+	  <img ng-src="http://openweathermap.org/img/w/{{weather.icon}}.png">
+	  </div>
+		<p>Fecha</p>
+        <h2>{{item.dt*1000 | date:'medium'}}</h2>
+		<p>{{item.weather[0].description}}</p>
+        <p>Temperatura Promedio: {{item.main.temp_max}} °C</p>
+		<p>Temperatura Mínima: {{item.main.temp_min}} °C</p>
+
+		
+		
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
